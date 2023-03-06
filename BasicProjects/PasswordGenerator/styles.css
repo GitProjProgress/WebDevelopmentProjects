@@ -1,0 +1,249 @@
+*,*::before,*::after{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: 'League Spartan', sans-serif;
+}
+
+:root{
+    --dk-violet: hsl(268,75%,9%);
+    --lt-violet:  hsl(268,47%,21%);
+    --lt-violet2: hsl(281,89%,26%);
+    --vb-violet: hsl(285,91%,52%);
+    --vb-violet2: hsl(290,70%,36%);
+    --vb-yellow: hsl(52,100%,62%);
+    --pl-white: hsl(0,0%,100%);
+    --vb-cyan: hsl(176,100%,44%);
+    --vb-cyan2: hsl(177,92%,70%);
+    --dk-text: hsl(198,20%,13%);
+}
+
+.wrapper{
+    height: 100vh;
+    width: 100vw;
+    background-image: linear-gradient(210deg, rgba(22,6,40,1) 0%, rgba(52,28,79,1) 50%, rgba(88,7,125,1) 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    width: 100%;
+    max-width: 450px;
+}
+
+h1{
+    text-align: center;
+    opacity: 0.75;
+    color: var(--pl-white);
+    letter-spacing: 2px;
+    line-height: 1.2;
+    text-transform: uppercase;
+}
+
+.password-display-container{
+    width: 100%;
+    position: relative;
+    right: 1rem;
+    background-color: var(--dk-violet);
+    border-bottom: 0.35rem solid var(--lt-violet2);
+    border-radius: 1rem;
+    margin: 1rem;
+    padding-top: 0.35rem;
+}
+
+.passText {
+    width:100%;
+    background-color: transparent;
+    padding : 1.15rem 1rem;
+    color: var(--vb-yellow);
+    font-weight 600;
+    font-size: 1.5rem ;
+    line-height: 30px ;
+    letter-spacing: 1px ;
+    padding-right: 3.25rem;
+    border: none;
+}
+
+.passText:focus{
+    outline: none;
+}
+
+.passText::placeholder {
+    color: var(--vb-yellow);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    line-height: 30px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    left: 1.5rem;
+    opacity: 0.65;
+    text-transform: uppercase;
+}
+
+.copyButton{
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    right: 1.5rem;
+    transform: translateY(-50%);
+    background-color: transparent;
+    border: none;
+}
+
+.copied{
+    position: absolute;
+    font-size: 0.75rem;
+    padding: 0.4rem;
+    background-color: var(--lt-violet2);
+    color: var(--vb-yellow);
+    border-radius: 1.5rem;
+    opacity: 0;
+    top: -125%;
+    right: -75%;
+    transform: scale(1.5,1.5);
+    transition-property: opacity;
+    transition-duration: 900ms;
+}
+
+.copied.active{
+    opacity: 1;
+}
+
+.input-container {
+    width: 100%;
+    background-color: var(--dk-violet);
+    border-bottom: 0.35rem solid var(--lt-violet2);
+    border-radius: 1rem;
+    padding: 2rem;
+}
+
+.length-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.length-container p:nth-child(1) {
+    color: var(--pl-white);
+    font-size: 1.5rem;
+}
+
+.length-container p:nth-child(2) {
+    color: var(--vb-yellow);
+    font-size: 1.5rem;
+}
+
+.str-container{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1.75rem;
+    margin-bottom: 2rem;
+}
+
+.str-container p{
+    color: var(--pl-white);
+    font-size: 1.5rem;
+}
+
+.strength-indicator{
+    height: 1.5rem;
+    width: 1.5rem;
+    background-color: #ccc;
+    box-shadow: 1px 1px 5px 2.5px #979595, -1px -1px 5px 2.5px #979595;
+    border-radius: 100%;
+}
+
+.mainBtn{
+    width: 100%;
+    padding: 1rem 0;
+    background-color: var(--vb-violet);
+    border:none;
+    text-align: center;
+    border-radius: 0.75rem;
+    border-bottom: 0.35rem solid var(--vb-yellow);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--vb-yellow);
+    font-weight: 600;
+    font-size: 1.25rem;
+    cursor: pointer;
+}
+
+.check{
+    display: flex;
+    align-items: center;
+    margin: 1rem 0;
+    gap: 0 1rem;
+}
+
+.check input {
+    appearance: none;
+    height: 20px;
+    width: 20px;
+    border: 1px solid var(--vb-cyan);
+    cursor: pointer;
+    position: relative; /*  to absolutely position the ticks(pseudo element ::before) on this box  */
+    border-radius: 0.35rem;
+}
+
+.check input:checked {
+    background-color: var(--vb-cyan);
+}
+
+.check input:checked::before {
+    content: '✔';
+    position: absolute;
+    color: var(--dk-text);
+    font-size: 1.05rem;
+    font-weight: 600;
+    top: -3.5px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.check label{
+    color: var(--pl-white);
+    font-size: 1.25rem;
+    letter-spacing: 0.75px;
+}
+
+.Slider {
+    appearance: none;
+    width: 100%;
+    cursor: pointer;
+    background-color: var(--lt-violet);
+    border-radius: 1rem;
+    margin: 2rem 0rem 1.5rem;
+    background-image: linear-gradient(var(--vb-violet),var(--vb-violet)); /*its width needs to be set accordingly with thumb position and so the remainiing position should be visible using the background color*/
+    background-size: 50%;
+    background-repeat: no-repeat; /*since by default the bg-image is repeated both vertically & horizontally*/
+    height: 0.75rem;
+}
+
+.Slider:focus {
+    outline: 3px solid var(--vb-yellow);
+}
+
+.Slider::-webkit-slider-thumb {
+    position: relative;
+    appearance: none;
+    height: 2rem;
+    width: 2rem;
+    border-radius: 50%;
+    background-color: var(--vb-yellow);
+    margin-top: -3px;
+    box-shadow: 0px 0px 20px 0px rgba(255,229,61,0.5);
+    transition: all 100ms ease-in;
+}
+
+/* ::webkit:hover works here, as webkit is not a pseudo element but an integral part of the slider, an actual element */
+.Slider::-webkit-slider-thumb:hover {
+    outline: 2px solid var(--vb-yellow);
+    background-color: var(--dk-violet);
+    box-shadow: 0px 0px 25px 5px rgba(255,229,61,0.8);
+}
