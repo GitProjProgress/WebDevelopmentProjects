@@ -1,0 +1,270 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+*{
+    padding:0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+.wrapper{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('./bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    animation: bgchange 2.5s linear infinite;
+}
+
+.container{
+    height: 85%;
+    width: 40%;
+    border: 2px solid lightseagreen;
+    border-radius: 2.5rem;
+    padding: 2rem;
+    background-color: transparent;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap:2rem;
+    backdrop-filter: blur(2rem);
+}
+
+.form-container{
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+h1{
+    text-align: center;
+}
+
+a{
+    color: white;
+    text-decoration: none;
+}
+
+.register{
+    font-weight: bold;
+}
+
+.register:hover, .forgot-password:hover{
+    text-decoration: underline;
+}
+
+.label-email,.label-password{
+    position: absolute;
+    transition: transform 200ms linear;
+    font-size: large;
+    bottom: 2.29rem;
+}
+
+input[type='email'], [type='password']{
+    color:white;
+    letter-spacing: 0.25rem;
+    flex-grow: 1;
+    height: 2rem;
+    border-radius: 0.2rem;
+    border:none;
+    border-bottom:1px solid white;
+    outline: none;
+    background-color: transparent;
+    caret-color: white;
+    padding: 0.75rem;
+    
+}
+
+.email,.password {
+    position: relative;
+    padding: 1rem 1rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+
+.mail, .lock{
+    position: absolute;
+    right: 1.5rem;
+    cursor: pointer;
+    font-size: large;
+}
+
+.remember-forget{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+.forgot-password{
+    transform: translateY(0.1rem);
+}
+
+[type='email']::placeholder, [type='password']::placeholder{
+    opacity: 0;
+}
+
+[type='email']:focus ~ .label-email, [type='email']:not(:placeholder-shown) ~ .label-email,[type='password']:focus ~ .label-password,[type='password']:not(:placeholder-shown) ~ .label-password {
+    transform: translateY(-1.1rem);
+}
+
+.check{
+    appearance: none;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    border: 1px solid rgb(255, 255, 255);
+    transform: translateY(4px);
+    cursor: pointer;
+}
+
+.check:checked{
+    background-color: #f8f40c;
+}
+
+.login-btn{
+    padding: 0.75rem 0.70rem;
+    border-radius: 2.5rem;
+    cursor: pointer;
+    font-size: large;
+    font-weight: bold;
+    transition-property: background-color, color;
+    transition: 150ms linear;
+    border: none;
+    outline: none;
+    background-color: #ffffffab;
+}
+
+.login-btn:hover{
+    background-color: #0a122ba9;
+    color: white;
+}
+
+.text{
+    text-align: center;
+}
+
+@keyframes bgchange {
+    100% {
+        filter: hue-rotate(360deg);
+    }
+}
+
+@media (min-width: 791px) and (max-width: 995px) {
+    
+    .form-container{
+        gap: 3rem;
+    }
+    .container{
+        height: 90%;
+        width: 50%;
+    }
+}
+
+@media (min-width:571px) and (max-width:790px) {
+    .form-container{
+        gap: 3.2rem;
+    }
+
+    .container{
+        height: 90%;
+        width:70%;
+    }
+}
+
+@media (min-width: 501px) and (max-width:570px) {
+    .form-container{
+        gap: 3.2rem;
+    }
+
+    .container{
+        height: 90%;
+        width:80%;
+    }
+}
+
+@media (min-width:441px) and (max-width:500px) {
+    .form-container{
+        gap: 3.2rem;
+        padding: 1.5rem;
+    }
+
+    .container{
+        height: 100%;
+        width:100%;
+        border: none;
+        outline: none;
+        border-radius: 0;
+        padding: 0.5rem;
+    }
+}
+
+@media (min-width:411px) and (max-width:440px) {
+    .form-container{
+        gap: 2.7rem;
+        padding: 0.5rem;
+        padding-left: 0.2rem;
+        align-items: center;
+    }
+
+    .remember-forget{
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 2.2rem;
+    }
+
+    .login-btn{
+        padding: 0.5rem 0.5rem;
+        align-items: center;
+        width: 40%;
+    }
+
+    .container{
+        height: 100%;
+        width:100%;
+        border: none;
+        outline: none;
+        border-radius: 0;
+        padding:1rem;
+    }
+}
+
+@media screen and (max-width:410px) {
+    .form-container{
+        gap: 2.7rem;
+        padding: 0.5rem;
+        align-items: center;
+        padding-left: 0.2rem;
+    }
+
+    .remember-forget{
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 2.2rem;
+    }
+
+    .login-btn{
+        padding: 0.5rem 0.5rem;
+        align-items: center;
+        width: 40%;
+    }
+
+    .container{
+        height: 100%;
+        width:100%;
+        border: none;
+        outline: none;
+        border-radius: 0;
+        padding:0.25rem;
+    }
+}
