@@ -22,11 +22,17 @@
     overflow: hidden;
 }
 
+.bg-image{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
 .container{
     position: absolute;
     height: 85%;
     width: 40%;
-    border: 2px solid lightseagreen;
+    /* border: 2px solid lightseagreen; */
     border-radius: 2.5rem;
     padding: 2rem;
     background-color: transparent;
@@ -164,7 +170,7 @@ input[type='email'], [type='password']{
 @media (min-width: 791px) and (max-width: 995px) {
     
     .form-container{
-        gap: 3rem;
+        gap: 2.4rem;
     }
     .container{
         height: 90%;
@@ -174,18 +180,19 @@ input[type='email'], [type='password']{
 
 @media (min-width:571px) and (max-width:790px) {
     .form-container{
-        gap: 3.2rem;
+        gap: 2.2rem;
     }
 
     .container{
         height: 90%;
         width:70%;
+        padding: 2.5rem;
     }
 }
 
 @media (min-width: 501px) and (max-width:570px) {
     .form-container{
-        gap: 3.2rem;
+        gap: 2.2rem;
     }
 
     .container{
